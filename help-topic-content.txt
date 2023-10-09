@@ -1,4 +1,4 @@
-[details="Tags to Hide Elements" (Requires the Theme Component: https://github.com/denvergeeks/discourse-hide-elements-with-tags)]
+[details="Tags to Hide Elements" (Requires the Theme Component: https://github.com/denvergeeks/discourse-tag-layouts)]
 | TAG (You must create the tags!) | HIDES/MODIFIES ELEMENT(S) | 
 | ------------- | ------------- | 
 | <pre>hide-all-but-topic-body</pre> | [hides and modifies all of the below at once] | 
