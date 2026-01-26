@@ -1,9 +1,18 @@
-# name: discourse-plugin-composer-help-button
-# about: Add a help button to the composer window
-# version: 1.1.0
-# authors: Matthew Wilkin
-# url: https://github.com/cpradio/discourse-plugin-composer-help-button
+# name: composer-help-button
+# about: Adds a help button to the composer to display contextual help content
+# version: 1.0.0
+# authors: Denver Geeks
+# url: https://github.com/denvergeeks/discourse-plugin-composer-help-button
+# required_version: 3.2.0
+# compatibility_version: 2026.01
 
-enabled_site_setting :composer_help_enabled
+enabled_site_setting :composer_help_button_enabled
 
-register_asset 'stylesheets/composer-help.scss'
+after_initialize do
+  # Register the composer help button initializer
+  PLUGIN_NAME ||= "discourse-plugin-composer-help-button"
+
+  # Add site setting for help button URL
+  add_site_setting_var(:composer_help_button_url, :string, "")
+  add_site_setting_var(:composer_help_button_enabled, :boolean, true)
+  add_site_setting_var(:composer_help_button_label, :string, "Help")
