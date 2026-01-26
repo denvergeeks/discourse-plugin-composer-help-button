@@ -20,21 +20,20 @@ export default {
       api.onToolbarCreate((toolbar) => {
         const helpUrl = siteSettings.composer_help_button_url;
         const helpLabel = siteSettings.composer_help_button_label || "Help";
+        const modal = container.lookup("service:modal");
 
         toolbar.addButton({
           id: "help",
           group: 5,
           icon: "question-circle",
           title: helpLabel,
-          perform: () => {
+          action: () => {
             if (!helpUrl) {
               const dialog = container.lookup("service:dialog");
               dialog.alert("No help URL configured in admin settings.");
               return;
             }
 
-            // Load and show help
-            const modal = container.lookup("service:modal");
             loadAndShowHelp(helpUrl, modal, container);
           },
         });
