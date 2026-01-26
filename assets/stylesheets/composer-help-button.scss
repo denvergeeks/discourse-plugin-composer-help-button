@@ -1,0 +1,263 @@
+// Composer Help Button Styles
+// Discourse Design System Compatible (Light & Dark Themes)
+
+.composer-help-modal {
+  .help-content {
+    max-height: 600px;
+    overflow-y: auto;
+    padding: 1rem;
+
+    .help-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--primary-medium);
+
+      // Headings
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 1.5rem 0 0.5rem;
+        font-weight: 600;
+        color: var(--primary);
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+      }
+
+      h4,
+      h5,
+      h6 {
+        font-size: 1rem;
+      }
+
+      // Paragraphs
+      p {
+        margin: 0.5rem 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      // Lists
+      ul,
+      ol {
+        margin: 1rem 0 1rem 1.5rem;
+        padding: 0;
+
+        li {
+          margin: 0.25rem 0;
+          padding: 0;
+        }
+
+        // Nested lists
+        ul,
+        ol {
+          margin: 0.5rem 0 0.5rem 1.5rem;
+        }
+      }
+
+      // Inline code
+      code {
+        background-color: var(--secondary-low);
+        color: var(--secondary-very-high);
+        padding: 0.2rem 0.4rem;
+        border-radius: 3px;
+        font-family: monospace;
+        font-size: 0.9em;
+        white-space: nowrap;
+        word-break: break-word;
+      }
+
+      // Code blocks
+      pre {
+        background-color: var(--secondary-low);
+        border: 1px solid var(--secondary);
+        padding: 1rem;
+        border-radius: 4px;
+        overflow-x: auto;
+        margin: 1rem 0;
+
+        code {
+          background: none;
+          padding: 0;
+          color: inherit;
+          white-space: pre;
+        }
+      }
+
+      // Blockquotes
+      blockquote {
+        border-left: 4px solid var(--primary-medium);
+        padding-left: 1rem;
+        margin: 1rem 0;
+        color: var(--primary-medium);
+        font-style: italic;
+
+        p {
+          margin: 0.25rem 0;
+        }
+      }
+
+      // Links
+      a {
+        color: var(--tertiary);
+        text-decoration: none;
+
+        &:hover {
+          color: var(--tertiary-hover);
+          text-decoration: underline;
+        }
+
+        &:visited {
+          color: var(--tertiary-medium);
+        }
+
+        &:active {
+          color: var(--tertiary-dark);
+        }
+      }
+
+      // Tables
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+
+        thead {
+          background-color: var(--secondary-low);
+        }
+
+        th,
+        td {
+          border: 1px solid var(--secondary);
+          padding: 0.5rem;
+          text-align: left;
+        }
+
+        th {
+          font-weight: 600;
+          background-color: var(--secondary-low);
+        }
+
+        tbody tr:nth-child(even) {
+          background-color: var(--secondary-very-low);
+        }
+
+        tbody tr:hover {
+          background-color: var(--secondary-low);
+        }
+      }
+
+      // Horizontal rule
+      hr {
+        border: none;
+        border-top: 1px solid var(--secondary);
+        margin: 1.5rem 0;
+      }
+
+      // Images
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin: 1rem 0;
+      }
+    }
+
+    // No content placeholder
+    .no-help-content {
+      color: var(--primary-medium);
+      font-style: italic;
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    // Custom scrollbar for better UX
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--secondary-very-low);
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--secondary-medium);
+      border-radius: 4px;
+
+      &:hover {
+        background: var(--secondary);
+      }
+    }
+  }
+
+  // Modal footer styling
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    border-top: 1px solid var(--secondary);
+    padding-top: 1rem;
+  }
+
+  // Ensure modal has proper sizing
+  @media (max-width: 600px) {
+    .help-content {
+      max-height: 400px;
+      padding: 0.75rem;
+    }
+
+    .help-text {
+      font-size: 0.9rem;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+// Composer toolbar button styling
+.d-editor-button-bar {
+  .btn.composer-help-button {
+    &:hover {
+      background-color: var(--primary-low);
+    }
+
+    &:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    &:active {
+      background-color: var(--primary);
+      color: var(--secondary);
+    }
+  }
+}
