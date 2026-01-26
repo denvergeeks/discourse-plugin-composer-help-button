@@ -1,5 +1,4 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
-import ComposerHelpModal from "../components/modal/composer-help-modal";
 
 export default {
   name: "composer-help-button",
@@ -12,8 +11,6 @@ export default {
     }
 
     withPluginApi("0.12.1", (api) => {
-      api.registerComponent("modal:composer-help-modal", ComposerHelpModal);
-
       api.onToolbarCreate((toolbar) => {
         toolbar.addButton({
           id: "composer-help-button",
