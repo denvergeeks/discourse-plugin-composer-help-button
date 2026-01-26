@@ -11,9 +11,4 @@ enabled_site_setting :composer_help_button_enabled
 after_initialize do
   # Register the composer help button initializer
   PLUGIN_NAME ||= "discourse-plugin-composer-help-button"
-
-  # Add site setting for help button URL
-  add_site_setting_var(:composer_help_button_url, :string, "")
-  add_site_setting_var(:composer_help_button_enabled, :boolean, true)
-  add_site_setting_var(:composer_help_button_label, :string, "Help")
 end
