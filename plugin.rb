@@ -16,3 +16,4 @@ after_initialize do
   add_site_setting_var(:composer_help_button_url, :string, "")
   add_site_setting_var(:composer_help_button_enabled, :boolean, true)
   add_site_setting_var(:composer_help_button_label, :string, "Help")
+end
