@@ -7,33 +7,33 @@ export default {
   initialize(container) {
     const siteSettings = container.lookup("service:site-settings");
 
-    // Only initialize if the feature is enabled
     if (!siteSettings.composer_help_button_enabled) {
       return;
     }
 
     withPluginApi("0.12.1", (api) => {
-      // Register the modal component
+      // register the modal component
       api.registerComponent("modal:composer-help-modal", ComposerHelpModal);
 
-      // Use onToolbarCreate to add the button to the composer
+      // add button to composer toolbar
       api.onToolbarCreate((toolbar) => {
-        const helpUrl = siteSettings.composer_help_button_url;
-        const helpLabel = siteSettings.composer_help_button_label || "Help";
-        const modal = container.lookup("service:modal");
-
         toolbar.addButton({
-          id: "help",
-          group: 5,
+          id: "composer-help-button",
+          group: "insertions", // safe group name
           icon: "question-circle",
-          title: helpLabel,
-          action: () => {
+          title: siteSettings.composer_help_button_label || "Help",
+
+          perform() {
+            const helpUrl = siteSettings.composer_help_button_url;
             if (!helpUrl) {
               const dialog = container.lookup("service:dialog");
-              dialog.alert("No help URL configured in admin settings.");
+              dialog.alert(
+                "No help URL configured in the Composer Help Button settings."
+              );
               return;
             }
 
+            const modal = container.lookup("service:modal");
             loadAndShowHelp(helpUrl, modal, container);
           },
         });
@@ -56,7 +56,6 @@ function loadAndShowHelp(url, modal, container) {
       return response.text();
     })
     .then((html) => {
-      // Basic safety: remove script tags
       const cleanHtml = html.replace(
         /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi,
         ""
