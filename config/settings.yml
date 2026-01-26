@@ -1,24 +1,12 @@
 plugins:
   composer_help_button_enabled:
     default: true
-    type: bool
-    category: plugins
-    description: "Enable the composer help button feature"
+    client: true
 
   composer_help_button_url:
-    default: "https://discourse.pub/t/help-topic/694"
-    type: string
-    category: plugins
-    description: |
-      URL to the help content topic or page (must be publicly accessible).
-      Example: https://yourforum.com/t/composer-help-topic/123
-      The content will be fetched and displayed in a modal when users click the help button.
-    placeholder: "https://yourforum.com/t/help-topic/123"
+    default: ""
+    client: true
 
   composer_help_button_label:
     default: "Help"
-    type: string
-    category: plugins
-    description: "Label text for the help button in the composer"
-    max_length: 50
-    placeholder: "Help"
+    client: true
