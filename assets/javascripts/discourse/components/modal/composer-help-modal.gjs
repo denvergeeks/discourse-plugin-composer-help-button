@@ -3,52 +3,13 @@ import { action } from "@ember/object";
 import { tracked } from "@glimmer/tracking";
 import DButton from "discourse/components/d-button";
 import DModal from "discourse/components/d-modal";
-import sanitizeHtml from "discourse/lib/sanitize-html";
 
 export default class ComposerHelpModal extends Component {
-  @tracked sanitizedContent = "";
+  @tracked helpContent = "";
 
   constructor() {
     super(...arguments);
-
-    const content = this.args.model?.helpContent || "";
-    // Sanitize HTML to prevent XSS attacks
-    this.sanitizedContent = sanitizeHtml(content, {
-      allowedTags: [
-        "b",
-        "i",
-        "em",
-        "strong",
-        "a",
-        "p",
-        "br",
-        "ul",
-        "ol",
-        "li",
-        "h1",
-        "h2",
-        "h3",
-        "h4",
-        "h5",
-        "h6",
-        "pre",
-        "code",
-        "blockquote",
-        "hr",
-        "table",
-        "tr",
-        "td",
-        "th",
-        "thead",
-        "tbody",
-      ],
-      allowedAttributes: {
-        a: ["href", "title", "target", "rel"],
-        img: ["src", "alt", "title"],
-        code: ["class"],
-        pre: ["class"],
-      },
-    });
+    this.helpContent = this.args.model?.helpContent || "";
   }
 
   @action
@@ -57,7 +18,7 @@ export default class ComposerHelpModal extends Component {
   }
 
   get hasContent() {
-    return this.sanitizedContent && this.sanitizedContent.trim().length > 0;
+    return this.helpContent && this.helpContent.trim().length > 0;
   }
 
   <template>
@@ -70,8 +31,7 @@ export default class ComposerHelpModal extends Component {
         <div class="help-content">
           {{#if this.hasContent}}
             <div class="help-text">
-              {{! Safe because we sanitized it in the constructor }}
-              {{{this.sanitizedContent}}}
+              {{{this.helpContent}}}
             </div>
           {{else}}
             <p class="no-help-content">No help content available.</p>
