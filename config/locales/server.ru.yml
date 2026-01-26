@@ -1,4 +1,5 @@
 ru:
   site_settings:
-    composer_help_enabled: 'Show help button on composer window?'
-    composer_help_modal_url: 'URL содержимого модального окна. Удостоверьтесь, что вы создали доступную для всех тему.'
+    composer_help_button_enabled: "Show help button on composer window?"
+    composer_help_button_url: "URL содержимого модального окна. Удостоверьтесь, что вы создали доступную для всех тему."
+    composer_help_button_label: "Label for the help button in the composer toolbar"
