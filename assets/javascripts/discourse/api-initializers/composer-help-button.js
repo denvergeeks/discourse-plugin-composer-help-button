@@ -12,14 +12,12 @@ export default {
     }
 
     withPluginApi("0.12.1", (api) => {
-      // register the modal component
       api.registerComponent("modal:composer-help-modal", ComposerHelpModal);
 
-      // add button to composer toolbar
       api.onToolbarCreate((toolbar) => {
         toolbar.addButton({
           id: "composer-help-button",
-          group: "insertions", // safe group name
+          group: "insertions",
           icon: "question-circle",
           title: siteSettings.composer_help_button_label || "Help",
 
