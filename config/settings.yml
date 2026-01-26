@@ -6,7 +6,7 @@ plugins:
     description: "Enable the composer help button feature"
 
   composer_help_button_url:
-    default: ""
+    default: "https://discourse.pub/t/help-topic/694"
     type: string
     category: plugins
     description: |
