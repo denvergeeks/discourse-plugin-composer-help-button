@@ -2,11 +2,9 @@ composer_help_button:
   composer_help_button_enabled:
     default: true
     client: true
-
   composer_help_button_url:
     default: ""
     client: true
-
   composer_help_button_label:
     default: "Help"
     client: true
