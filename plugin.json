@@ -1,0 +1,11 @@
+{
+  "name": "Composer Help Button",
+  "about": "Adds a help button to the composer window with customizable help content",
+  "version": "1.0.0",
+  "authors": "Denver Geeks",
+  "homepage": "https://github.com/denvergeeks/discourse-plugin-composer-help-button",
+  "bugtrack_url": "https://github.com/denvergeeks/discourse-plugin-composer-help-button/issues",
+  "repository": "https://github.com/denvergeeks/discourse-plugin-composer-help-button.git",
+  "minimum_discourse_version": "3.2.0",
+  "compatibility": "2026.01"
+}
