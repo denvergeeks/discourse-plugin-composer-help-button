@@ -3,7 +3,6 @@ import { action } from "@ember/object";
 import { tracked } from "@glimmer/tracking";
 import DButton from "discourse/components/d-button";
 import DModal from "discourse/components/d-modal";
-import { i18n } from "discourse/lib/i18n";
 
 export default class ComposerHelpModal extends Component {
   @tracked helpContent = "";
@@ -44,8 +43,7 @@ export default class ComposerHelpModal extends Component {
         <DButton
           @action={{this.closeModal}}
           @label="Close"
-          @isDisabled={{false}}
-          @class="btn-primary"
+          class="btn-primary"
         />
       </:footer>
     </DModal>
