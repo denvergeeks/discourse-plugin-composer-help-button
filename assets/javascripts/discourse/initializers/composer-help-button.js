@@ -17,7 +17,7 @@ export default {
         toolbar.addButton({
           id: "composer-help-button",
           group: "insertions",
-          icon: "question-circle",
+          icon: "circle-question",
           title: siteSettings.composer_help_button_label || "Editor Help Topics",
 
           perform() {
