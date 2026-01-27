@@ -1,4 +1,4 @@
-plugin:
+plugins:
   composer_help_button_enabled:
     default: true
     client: true
