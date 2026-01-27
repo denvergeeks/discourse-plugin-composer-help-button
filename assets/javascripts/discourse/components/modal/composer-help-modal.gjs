@@ -42,7 +42,7 @@ export default class ComposerHelpModal extends Component {
       <:footer>
         <DButton
           @action={{this.closeModal}}
-          @label="Close"
+          @translatedLabel="Close"
           class="btn-primary"
         />
       </:footer>
