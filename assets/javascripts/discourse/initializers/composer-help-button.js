@@ -19,6 +19,7 @@ export default {
           group: "insertions",
           icon: "circle-question",
           translatedLabel: siteSettings.composer_help_button_label,
+          title: siteSettings.composer_help_button_title,
 
           perform() {
             const helpUrl = siteSettings.composer_help_button_url;
