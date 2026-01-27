@@ -1,4 +1,6 @@
 import { withPluginApi } from "discourse/lib/plugin-api";
+import ComposerHelpModal from "../components/modal/composer-help-modal";
+import { getOwner } from "@ember/application";
 
 export default {
   name: "composer-help-button",
@@ -28,8 +30,7 @@ export default {
               return;
             }
 
-            const modal = container.lookup("service:modal");
-            loadAndShowHelp(helpUrl, modal, container);
+            loadAndShowHelp(helpUrl, container);
           },
         });
       });
@@ -37,7 +38,7 @@ export default {
   },
 };
 
-function loadAndShowHelp(url, modal, container) {
+function loadAndShowHelp(url, container) {
   fetch(url, {
     method: "GET",
     headers: { Accept: "text/html" },
@@ -56,7 +57,10 @@ function loadAndShowHelp(url, modal, container) {
         ""
       );
 
-      modal.show("composer-help-modal", {
+      const modal = container.lookup("service:modal");
+      const owner = getOwner(container);
+      
+      modal.show(ComposerHelpModal, {
         model: {
           helpContent: cleanHtml,
           helpUrl: url,
