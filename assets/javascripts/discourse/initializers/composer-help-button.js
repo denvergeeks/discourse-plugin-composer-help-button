@@ -18,7 +18,7 @@ export default {
           id: "composer-help-button",
           group: "insertions",
           icon: "circle-question",
-          title: "Editor Help Topics",
+          label: "Editor Help Topics",
 
           perform() {
             const helpUrl = siteSettings.composer_help_button_url;
