@@ -1,4 +1,4 @@
-# name: composer-help-button
+# name: discourse-plugin-composer-help-button
 # about: Adds a help button to the composer to display contextual help content
 # version: 1.0.0
 # authors: Denver Geeks
@@ -8,7 +8,12 @@
 
 enabled_site_setting :composer_help_button_enabled
 
+register_asset "stylesheets/composer-help-button.scss"
+
+module ::DiscoursePluginComposerHelpButton
+  PLUGIN_NAME = "discourse-plugin-composer-help-button"
+end
+
 after_initialize do
-  # Register the composer help button initializer
-  PLUGIN_NAME ||= "discourse-plugin-composer-help-button"
+
 end
