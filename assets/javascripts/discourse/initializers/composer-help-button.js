@@ -18,7 +18,7 @@ export default {
           id: "composer-help-button",
           group: "insertions",
           icon: "circle-question",
-          label: "Editor Help Topics",
+          translatedLabel: siteSettings.composer_help_button_label,
 
           perform() {
             const helpUrl = siteSettings.composer_help_button_url;
@@ -58,7 +58,6 @@ function loadAndShowHelp(url, container) {
       );
 
       const modal = container.lookup("service:modal");
-      const owner = getOwner(container);
       
       modal.show(ComposerHelpModal, {
         model: {
