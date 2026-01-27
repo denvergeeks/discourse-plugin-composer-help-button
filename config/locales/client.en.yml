@@ -1,4 +1,5 @@
 en:
   js:
     composer:
-      composer_help_button_title: "Composer Help"
+      composer_help_button:
+        title: "Composer Help This is the Title"
