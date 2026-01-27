@@ -3,3 +3,4 @@ en:
     composer_help_button_enabled: "Enable the composer help button"
     composer_help_button_url: "URL to the help content (must be publicly accessible)"
     composer_help_button_label: "Label for the help button in the composer toolbar"
+    composer_help_button_title: "Tooltip text (hover) for the help button"
