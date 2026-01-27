@@ -8,6 +8,3 @@ plugins:
   composer_help_button_label:
     default: "Help"
     client: true
-  composer_help_button_title:
-    default: "Help"
-    client: true
